@@ -1,0 +1,17 @@
+<Combine name="SharpTranslator" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry build="True" name="SharpTranslator" configuration="Debug" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry build="True" name="SharpTranslator" configuration="Debug" />
+    </Configuration>
+  </Configurations>
+  <DeployTargets />
+  <StartMode startupentry="SharpTranslator" single="True">
+    <Execute type="None" entry="SharpTranslator" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./SharpTranslator/SharpTranslator.mdp" />
+  </Entries>
+</Combine>
