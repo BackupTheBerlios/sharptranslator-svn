@@ -11,23 +11,24 @@ public class MainWindow: Gtk.Window
 	private IDbConnection dbcon;
 	private string connectionString = "URI=file:translator.db, version=3";
 	private IDbCommand dbcmd;
-	protected Gtk.ComboBox comboTarget;
-	protected Gtk.ComboBox comboSource;
 	protected Gtk.Entry entryKeyword;
 	protected Gtk.TreeView treeviewResults;
 	private GuiTreeview gtv;
 	private Hashtable languages = new Hashtable();
 	protected Gtk.Entry entryExpression;
+	protected SharpTranslator.ReversibleCombos rCombos;
 	
 	public MainWindow (): base ("")
 	{
 		Stetic.Gui.Build (this, typeof(MainWindow));
 		this.Title = "SharpTranslator";
+		rCombos.CheckButtonReverse.Toggled += new EventHandler(this.OnReverseToggled);
 		try {
 			TranslatorLib.Connect();
 			LoadLanguages();
 			InitTreeview();
 			entryKeyword.HasFocus = true;
+			this.DefaultWidth = rCombos.WidthRequest; 
 		}
 		catch(Exception e)
 		{
@@ -43,15 +44,15 @@ public class MainWindow: Gtk.Window
 		int id;
 		for (int i = 0; i < langs.Count; i = i+2)
 		{
-       		comboSource.AppendText((string)langs[i]);
+       		rCombos.ComboSource.AppendText((string)langs[i]);
        		id = Int32.Parse((string)langs[i+1]);
        		languages[langs[i]] = id;
-            comboTarget.AppendText((string)langs[i]);
+            rCombos.ComboTarget.AppendText((string)langs[i]);
 		}
 		if (langs.Count >= 2)
 		{
-			comboSource.Active = 0;
-			comboTarget.Active = 1;
+			rCombos.ComboSource.Active = 0;
+			rCombos.ComboTarget.Active = 1;
 		}
     }
 	
@@ -86,7 +87,7 @@ public class MainWindow: Gtk.Window
 		((TreeStore)treeviewResults.Model).Clear();
 		if (key.Length > 0)
 		{
-			ArrayList res = (ArrayList)TranslatorLib.SearchKey(key, comboSource.ActiveText, comboTarget.ActiveText);
+			ArrayList res = (ArrayList)TranslatorLib.SearchKey(key, rCombos.ComboSource.ActiveText, rCombos.ComboTarget.ActiveText);
 			for (int i = 0; i < res.Count; i=i+2)
 			{
 				string[] row = new string[2];
@@ -118,7 +119,7 @@ public class MainWindow: Gtk.Window
 
 	protected virtual void OnLearn(object sender, System.EventArgs e)
 	{
-		LearnWindow lw = new LearnWindow((int)languages[comboSource.ActiveText], (int)languages[comboTarget.ActiveText]);
+		LearnWindow lw = new LearnWindow((int)languages[rCombos.ComboSource.ActiveText], (int)languages[rCombos.ComboTarget.ActiveText]);
 		lw.Present();
 	}
 
@@ -128,7 +129,7 @@ public class MainWindow: Gtk.Window
 		((TreeStore)treeviewResults.Model).Clear();
 		if (key.Length > 0)
 		{
-			ArrayList res = (ArrayList)TranslatorLib.SearchExpression(key, comboSource.ActiveText, comboTarget.ActiveText);
+			ArrayList res = (ArrayList)TranslatorLib.SearchExpression(key, rCombos.ComboSource.ActiveText, rCombos.ComboTarget.ActiveText);
 			for (int i = 0; i < res.Count; i=i+2)
 			{
 				string[] row = new string[2];
@@ -151,6 +152,11 @@ public class MainWindow: Gtk.Window
 	{
 		AboutDialog ad = new AboutDialog();
 		ad.Present();
+	}
+
+	protected virtual void OnReverseToggled(object sender, System.EventArgs e)
+	{
+		entryKeyword.HasFocus = true;
 	}
 	
 	

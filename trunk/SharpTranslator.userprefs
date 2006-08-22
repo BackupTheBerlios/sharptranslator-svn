@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<UserCombinePreferences filename="/home/carlosble/Projects/SharpTranslator/SharpTranslator.mds">
+<UserCombinePreferences filename="/home/carlosble/svns/sharptranslator/SharpTranslator.mds">
   <Files>
-    <File filename="Welcome" />
-    <File filename="./SharpTranslator/Main.cs" />
-    <File filename="./SharpTranslator/MainWindow.cs" />
-    <File filename="./SharpTranslator/LearnWindow.cs" />
     <File filename="./SharpTranslator/TranslatorLib.cs" />
+    <File filename="./SharpTranslator/MainWindow.cs" />
+    <File filename="./SharpTranslator/ReversibleCombos.cs" />
+    <File filename="./SharpTranslator/LearnWindow.cs" />
+    <File filename="Documentación" />
   </Files>
   <Views>
     <ViewMemento Id="MonoDevelop.Ide.Gui.Pads.ProjectPad">
@@ -29,14 +29,14 @@
     </ViewMemento>
     <ViewMemento Id="MonoQuery.DatabasePad">
       <TreeView>
-        <Node expanded="True" />
+        <Node expanded="False" />
       </TreeView>
     </ViewMemento>
   </Views>
   <Properties>
     <Properties>
       <Property key="ActiveConfiguration" value="Debug" />
-      <Property key="ActiveWindow" value="/home/carlosble/Projects/SharpTranslator/SharpTranslator/MainWindow.cs" />
+      <Property key="ActiveWindow" value="/home/carlosble/svns/sharptranslator/SharpTranslator/MainWindow.cs" />
     </Properties>
   </Properties>
 </UserCombinePreferences>

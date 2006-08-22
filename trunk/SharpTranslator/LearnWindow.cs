@@ -8,8 +8,6 @@ namespace SharpTranslator
 	
 	public class LearnWindow : Gtk.Window
 	{
-		protected Gtk.ComboBox comboSource;
-		protected Gtk.ComboBox comboTarget;
 		protected Gtk.Entry entryText;
 		protected Gtk.Entry entryTranslation;
 		protected Gtk.CheckButton checkbExpression;
@@ -17,6 +15,7 @@ namespace SharpTranslator
 		private Hashtable languages = new Hashtable();
 		private bool word = true;
 		private int actlangSource, actlangTarget;
+		protected SharpTranslator.ReversibleCombos rCombos;
 		
 		public LearnWindow(int active1, int active2) : 
 				base("")
@@ -24,6 +23,7 @@ namespace SharpTranslator
 			Stetic.Gui.Build(this, typeof(SharpTranslator.LearnWindow));
 			checkbWord.Toggled += new EventHandler(this.OnWordToggled);
 			checkbExpression.Toggled += new EventHandler(this.OnExpressionToggled);
+			rCombos.CheckButtonReverse.Toggled += new EventHandler(this.OnReverseToggled);
 			this.Title = "Learn a new item";
 			actlangSource = active1;
 			actlangTarget = active2;
@@ -36,22 +36,22 @@ namespace SharpTranslator
 			int id;
 			for (int i = 0; i < langs.Count; i = i+2)
 			{
-   	    		comboSource.AppendText((string)langs[i]);
+   	    		rCombos.ComboSource.AppendText((string)langs[i]);
    	    		id = Int32.Parse((string)langs[i+1]);
    	    		languages[langs[i]] = id;
-				comboTarget.AppendText((string)langs[i]);
+				rCombos.ComboTarget.AppendText((string)langs[i]);
 			}
 			if (langs.Count >= 2)
 			{
-				comboSource.Active = actlangSource -1;
-				comboTarget.Active = actlangTarget -1;
+				rCombos.ComboSource.Active = actlangSource -1;
+				rCombos.ComboTarget.Active = actlangTarget -1;
 			}
 		}
 		
 		protected virtual void OnAccept(object sender, System.EventArgs e)
 		{
-			string sourcelang = comboSource.ActiveText;
-			string targetlang = comboTarget.ActiveText;
+			string sourcelang = rCombos.ComboSource.ActiveText;
+			string targetlang = rCombos.ComboTarget.ActiveText;
 			string text = entryText.Text;
 			string translation = entryTranslation.Text;
 			if (checkbWord.Active)
@@ -87,6 +87,12 @@ namespace SharpTranslator
 				checkbWord.Active = false;
 				word = false;
 			}
+		}
+		
+		
+		protected virtual void OnReverseToggled(object sender, System.EventArgs e)
+		{
+			entryText.HasFocus = true;
 		}
 	}
 	
