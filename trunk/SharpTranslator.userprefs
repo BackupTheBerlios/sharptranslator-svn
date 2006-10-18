@@ -1,25 +1,27 @@
 <?xml version="1.0"?>
 <UserCombinePreferences filename="/home/carlosble/svns/sharptranslator/SharpTranslator.mds">
   <Files>
+    <File filename="Bienvenido" />
     <File filename="./SharpTranslator/TranslatorLib.cs" />
     <File filename="./SharpTranslator/MainWindow.cs" />
-    <File filename="./SharpTranslator/ReversibleCombos.cs" />
     <File filename="./SharpTranslator/LearnWindow.cs" />
-    <File filename="Documentación" />
+    <File filename="./SharpTranslator/AboutDialog.cs" />
+    <File filename="./SharpTranslator/ReversibleCombos.cs" />
   </Files>
   <Views>
     <ViewMemento Id="MonoDevelop.Ide.Gui.Pads.ProjectPad">
       <TreeView>
         <Node expanded="True">
           <Node name="SharpTranslator" expanded="True">
-            <Node name="MainWindow.cs" expanded="False" selected="True" />
+            <Node name="UserInterface" expanded="True" />
+            <Node name="ReversibleCombos.cs" expanded="False" selected="True" />
           </Node>
         </Node>
       </TreeView>
     </ViewMemento>
     <ViewMemento Id="MonoDevelop.Ide.Gui.Pads.ClassPad">
       <TreeView>
-        <Node expanded="True" />
+        <Node expanded="True" selected="True" />
       </TreeView>
     </ViewMemento>
     <ViewMemento Id="MonoDevelop.NUnit.TestPad">
@@ -36,7 +38,7 @@
   <Properties>
     <Properties>
       <Property key="ActiveConfiguration" value="Debug" />
-      <Property key="ActiveWindow" value="/home/carlosble/svns/sharptranslator/SharpTranslator/MainWindow.cs" />
+      <Property key="ActiveWindow" value="/home/carlosble/svns/sharptranslator/SharpTranslator/ReversibleCombos.cs" />
     </Properties>
   </Properties>
 </UserCombinePreferences>

@@ -1,0 +1,8 @@
+Este paquete necesita del runtime de mono para correr.
+Si usa Debian o Ubuntu debería tener estos paquetes instalados:
+mono, mono-common, mono-jit, gtk-sharp2
+
+Una vez instalados lanze el ejecutable de esta manera:
+mono ./SharpTranslator.exe
+
+

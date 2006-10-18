@@ -1,0 +1,8 @@
+You need the mono runtime to run this program.
+If you are a Debian/Ubuntu user, you must install the packages below:
+mono, mono-common, mono-jit, gtk-sharp2
+
+Once installed, just launch the program with this line:
+mono ./SharpTranslator.exe
+
+

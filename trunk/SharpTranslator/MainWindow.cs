@@ -157,6 +157,7 @@ public class MainWindow: Gtk.Window
 	protected virtual void OnReverseToggled(object sender, System.EventArgs e)
 	{
 		entryKeyword.HasFocus = true;
+		this.OnSearch(sender, e);
 	}
 	
 	
