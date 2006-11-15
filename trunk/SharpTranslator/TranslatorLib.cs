@@ -151,6 +151,26 @@ namespace SharpTranslator
        return result ;
 	}
 	
+	public static IList ShowAllExpressions(string source, string target)
+	{
+       ArrayList result = new ArrayList();
+       string sql = "SELECT expression, translation from expressions, languages l, languages a";
+       sql += " where sourcelang = l.id and l.name = \"" + source+"\"";
+       sql += " and targetlang = a.id and a.name = \"" + target + "\"";
+       dbcmd.CommandText = sql;
+       IDataReader reader = dbcmd.ExecuteReader();
+       while(reader.Read()) 
+       {
+            string word = reader.GetString (0);
+            string translation = reader.GetString (1);
+            result.Add(word);
+            result.Add(translation);
+       }
+       reader.Close();
+       reader = null;
+       return result ;
+	}
+	
 	public static IList LoadActiveLanguages()
 	{
        ArrayList result = new ArrayList();

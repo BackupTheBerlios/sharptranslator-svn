@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <UserCombinePreferences filename="/home/carlosble/svns/sharptranslator/SharpTranslator.mds">
   <Files>
-    <File filename="Bienvenido" />
     <File filename="./SharpTranslator/TranslatorLib.cs" />
     <File filename="./SharpTranslator/MainWindow.cs" />
     <File filename="./SharpTranslator/LearnWindow.cs" />
@@ -14,7 +13,7 @@
         <Node expanded="True">
           <Node name="SharpTranslator" expanded="True">
             <Node name="UserInterface" expanded="True" />
-            <Node name="ReversibleCombos.cs" expanded="False" selected="True" />
+            <Node name="AboutDialog.cs" expanded="False" selected="True" />
           </Node>
         </Node>
       </TreeView>
@@ -38,7 +37,7 @@
   <Properties>
     <Properties>
       <Property key="ActiveConfiguration" value="Debug" />
-      <Property key="ActiveWindow" value="/home/carlosble/svns/sharptranslator/SharpTranslator/ReversibleCombos.cs" />
+      <Property key="ActiveWindow" value="/home/carlosble/svns/sharptranslator/SharpTranslator/AboutDialog.cs" />
     </Properties>
   </Properties>
 </UserCombinePreferences>

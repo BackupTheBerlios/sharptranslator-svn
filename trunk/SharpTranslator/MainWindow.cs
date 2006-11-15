@@ -159,6 +159,28 @@ public class MainWindow: Gtk.Window
 		entryKeyword.HasFocus = true;
 		this.OnSearch(sender, e);
 	}
+
+	protected virtual void OnShowAll(object sender, System.EventArgs e)
+	{
+		((TreeStore)treeviewResults.Model).Clear();
+		ArrayList res = (ArrayList)TranslatorLib.ShowAllExpressions(rCombos.ComboSource.ActiveText, rCombos.ComboTarget.ActiveText);
+			for (int i = 0; i < res.Count; i=i+2)
+			{
+				string[] row = new string[2];
+				row[0] = (string)res[i];
+				row[1] = (string)res[i+1];
+				gtv.InsertRow(TreeIter.Zero, row); 
+			}
+			if (res.Count == 0)
+			{
+				string[] row = new string[2];
+				row[0] = "Not found:";
+				row[1] = "No expressions found";
+				gtv.InsertRow(TreeIter.Zero, row);
+			}
+
+
+	}
 	
 	
 }
