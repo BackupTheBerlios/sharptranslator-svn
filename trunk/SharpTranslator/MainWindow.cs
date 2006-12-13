@@ -32,7 +32,9 @@ public class MainWindow: Gtk.Window
 		}
 		catch(Exception e)
 		{
-			System.Console.WriteLine("Exception:" + e.Message);
+			System.Console.WriteLine("Exception:" + e.Message + ":" + e.StackTrace);
+			if (e.InnerException != null)
+				System.Console.WriteLine("Inner:" + e.InnerException.Message + ":" + e.InnerException.StackTrace);
 		}
 	 
 	}

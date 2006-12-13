@@ -1,13 +1,199 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <stetic-interface>
-  <widget class="Gtk.Window" id="SharpTranslator.LearnWindow" design-size="586 190">
+  <widget class="Gtk.Bin" id="SharpTranslator.ReversibleCombos" design-size="300 300">
+    <property name="Events">ButtonPressMask</property>
+    <property name="MemberName" />
+    <child>
+      <widget class="Gtk.HBox" id="hbox1">
+        <property name="Spacing">5</property>
+        <property name="BorderWidth">5</property>
+        <property name="Events">0</property>
+        <property name="MemberName" />
+        <child>
+          <widget class="Gtk.Label" id="labelSource">
+            <property name="LabelProp" translatable="yes">Source:</property>
+            <property name="Events">0</property>
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="comboSource">
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+            <property name="Events">0</property>
+            <property name="MemberName">comboSource</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VSeparator" id="vseparator1">
+            <property name="Events">0</property>
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.CheckButton" id="checkbuttonReverse">
+            <property name="Label" translatable="yes">reverse</property>
+            <property name="DrawIndicator">True</property>
+            <property name="HasLabel">True</property>
+            <property name="BorderWidth">5</property>
+            <property name="CanFocus">True</property>
+            <property name="Events">0</property>
+            <property name="MemberName">checkbuttonReverse</property>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">False</property>
+            <property name="Expand">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VSeparator" id="vseparator2">
+            <property name="Events">0</property>
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="labelTarget">
+            <property name="LabelProp" translatable="yes">Target:</property>
+            <property name="Events">0</property>
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">5</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="comboTarget">
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes" />
+            <property name="Events">0</property>
+            <property name="MemberName">comboTarget</property>
+          </widget>
+          <packing>
+            <property name="Position">6</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Dialog" id="SharpTranslator.AboutDialog" design-size="487 303">
+    <property name="Title" translatable="yes">AboutDialog</property>
+    <property name="Buttons">1</property>
+    <property name="HelpButton">False</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="HasSeparator">False</property>
+    <property name="Events">ButtonPressMask</property>
+    <property name="MemberName" />
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog_VBox">
+        <property name="BorderWidth">2</property>
+        <property name="Events">ButtonPressMask</property>
+        <property name="MemberName" />
+        <child>
+          <widget class="Gtk.TextView" id="textview1">
+            <property name="Text" translatable="yes">
+         SharpTranslator
+
+    Version 0.1.3  (October 2006)
+
+    License: GPL
+
+    Author: Carlos Ble &lt;http://www.shidix.com/carlosble&gt;
+
+    English-Spanish dictionary was taken from i2e:
+          (Alfredo Casademunt, Jose Luis Triviño)
+
+</property>
+            <property name="CanFocus">True</property>
+            <property name="Events">0</property>
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HSeparator" id="hseparator1">
+            <property name="Events">0</property>
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="SharpTranslator.AboutDialog_ActionArea">
+        <property name="Size">1</property>
+        <property name="LayoutStyle">End</property>
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">5</property>
+        <property name="Events">ButtonPressMask</property>
+        <property name="MemberName" />
+        <child>
+          <widget class="Gtk.Button" id="buttonClose">
+            <property name="Type">TextAndIcon</property>
+            <property name="Icon">stock:gtk-close Menu</property>
+            <property name="Label" translatable="yes" context="yes" comments="">Close|Close</property>
+            <property name="IsDialogButton">True</property>
+            <property name="ResponseId">0</property>
+            <property name="CanFocus">True</property>
+            <property name="Events">0</property>
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <signal name="Clicked" handler="OnClose" />
+          </widget>
+          <packing>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="SharpTranslator.LearnWindow" design-size="586 194">
     <property name="Title" translatable="yes">LearnWindow</property>
     <property name="WindowPosition">Center</property>
     <property name="Resizable">False</property>
     <property name="AllowGrow">False</property>
     <property name="Events">0</property>
     <property name="MemberName" />
-    <signal name="DeleteEvent" handler="OnCancel" />
+    <signal name="DeleteEvent" handler="OnClose" after="yes" />
     <child>
       <widget class="Gtk.VBox" id="vbox1">
         <property name="Spacing">5</property>
@@ -187,7 +373,6 @@
                 <property name="CanFocus">True</property>
                 <property name="Events">0</property>
                 <property name="MemberName" />
-                <signal name="Clicked" handler="OnCancel" />
               </widget>
               <packing>
                 <property name="Expand">False</property>
@@ -578,192 +763,6 @@
           <packing>
             <property name="Position">7</property>
             <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-      </widget>
-    </child>
-  </widget>
-  <widget class="Gtk.Bin" id="SharpTranslator.ReversibleCombos" design-size="300 300">
-    <property name="Events">ButtonPressMask</property>
-    <property name="MemberName" />
-    <child>
-      <widget class="Gtk.HBox" id="hbox1">
-        <property name="Spacing">5</property>
-        <property name="BorderWidth">5</property>
-        <property name="Events">0</property>
-        <property name="MemberName" />
-        <child>
-          <widget class="Gtk.Label" id="labelSource">
-            <property name="LabelProp" translatable="yes">Source:</property>
-            <property name="Events">0</property>
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="Position">0</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.ComboBox" id="comboSource">
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes" />
-            <property name="Events">0</property>
-            <property name="MemberName">comboSource</property>
-          </widget>
-          <packing>
-            <property name="Position">1</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.VSeparator" id="vseparator1">
-            <property name="Events">0</property>
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="Position">2</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.CheckButton" id="checkbuttonReverse">
-            <property name="Label" translatable="yes">reverse</property>
-            <property name="DrawIndicator">True</property>
-            <property name="HasLabel">True</property>
-            <property name="BorderWidth">5</property>
-            <property name="CanFocus">True</property>
-            <property name="Events">0</property>
-            <property name="MemberName">checkbuttonReverse</property>
-          </widget>
-          <packing>
-            <property name="Position">3</property>
-            <property name="AutoSize">False</property>
-            <property name="Expand">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.VSeparator" id="vseparator2">
-            <property name="Events">0</property>
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="Position">4</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="labelTarget">
-            <property name="LabelProp" translatable="yes">Target:</property>
-            <property name="Events">0</property>
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="Position">5</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.ComboBox" id="comboTarget">
-            <property name="IsTextCombo">True</property>
-            <property name="Items" translatable="yes" />
-            <property name="Events">0</property>
-            <property name="MemberName">comboTarget</property>
-          </widget>
-          <packing>
-            <property name="Position">6</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-      </widget>
-    </child>
-  </widget>
-  <widget class="Gtk.Dialog" id="SharpTranslator.AboutDialog" design-size="487 303">
-    <property name="Title" translatable="yes">AboutDialog</property>
-    <property name="Buttons">1</property>
-    <property name="HelpButton">False</property>
-    <property name="WindowPosition">CenterOnParent</property>
-    <property name="HasSeparator">False</property>
-    <property name="Events">ButtonPressMask</property>
-    <property name="MemberName" />
-    <child internal-child="VBox">
-      <widget class="Gtk.VBox" id="dialog_VBox">
-        <property name="BorderWidth">2</property>
-        <property name="Events">ButtonPressMask</property>
-        <property name="MemberName" />
-        <child>
-          <widget class="Gtk.TextView" id="textview1">
-            <property name="Text" translatable="yes">
-         SharpTranslator
-
-    Version 0.1.3  (October 2006)
-
-    License: GPL
-
-    Author: Carlos Ble &lt;http://www.shidix.com/carlosble&gt;
-
-    English-Spanish dictionary was taken from i2e:
-          (Alfredo Casademunt, Jose Luis Triviño)
-
-</property>
-            <property name="CanFocus">True</property>
-            <property name="Events">0</property>
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="Position">0</property>
-            <property name="AutoSize">True</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.HSeparator" id="hseparator1">
-            <property name="Events">0</property>
-            <property name="MemberName" />
-          </widget>
-          <packing>
-            <property name="Position">1</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-      </widget>
-    </child>
-    <child internal-child="ActionArea">
-      <widget class="Gtk.HButtonBox" id="SharpTranslator.AboutDialog_ActionArea">
-        <property name="Size">1</property>
-        <property name="LayoutStyle">End</property>
-        <property name="Spacing">10</property>
-        <property name="BorderWidth">5</property>
-        <property name="Events">ButtonPressMask</property>
-        <property name="MemberName" />
-        <child>
-          <widget class="Gtk.Button" id="buttonClose">
-            <property name="Type">TextAndIcon</property>
-            <property name="Icon">stock:gtk-close Menu</property>
-            <property name="Label" translatable="yes" context="yes" comments="">Close|Close</property>
-            <property name="IsDialogButton">True</property>
-            <property name="ResponseId">0</property>
-            <property name="CanFocus">True</property>
-            <property name="Events">0</property>
-            <property name="MemberName" />
-            <property name="CanDefault">True</property>
-            <signal name="Clicked" handler="OnClose" />
-          </widget>
-          <packing>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
           </packing>

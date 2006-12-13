@@ -5,6 +5,7 @@ using Mono.Data.SqliteClient;
 using System.IO;
 using System.Collections;
 
+
 namespace SharpTranslator
 {
 	
@@ -20,7 +21,8 @@ namespace SharpTranslator
 		public static void Connect()
 		{
 			string path = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "translator.db");
-			string connectionString = "URI=file:" + path + ", version=3";
+			string connectionString = "URI=file://" + path + ", version=3";
+			Console.WriteLine("Connstring:" + connectionString);
 			dbcon = (IDbConnection) new SqliteConnection(connectionString);
 			dbcon.Open();
 			dbcmd = dbcon.CreateCommand();

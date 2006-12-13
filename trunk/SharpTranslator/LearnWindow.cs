@@ -65,7 +65,7 @@ namespace SharpTranslator
 			this.Hide();
 		}
 
-		protected virtual void OnCancel(object sender, System.EventArgs e)
+		protected virtual void OnClose(object sender, Gtk.DeleteEventArgs e)
 		{
 			this.Hide();
 			this.Destroy();
